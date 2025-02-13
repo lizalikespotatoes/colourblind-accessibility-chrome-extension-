@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster:400|Raleway:300,400,500&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    .popup {
+        min-width: 200px; /* Smaller size */
+        min-height: 120px; /* Smaller size */
+        background: #FFFFFF;
+        padding: 1rem;
+        border-radius: 0; /* Removed rounded corners */
+    }
+
+    h1 {
+        font-size: 1rem; /* Smaller heading */
+        font-family: "Raleway", sans-serif;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .blue {
+        color: #09152c;
+    }
+
+    p {
+        font-family: "Raleway", sans-serif;
+        font-size: 0.75rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .button {
+        background-color: #8ABFF0; /* Blue only */
+        position: relative;
+        height: 1.5rem;
+        width: 2rem;
+        border-radius: 25px;
+        transition: 1s;
+        font-family: "Raleway", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .half {
+        font-size: 0.75rem;
+        color: white;
+        pointer-events: none;
+    }
+
+    .circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background-color: rgb(7, 7, 7); /* White circle */
+        pointer-events: none;
+        transition: 1s;
+    }
+
+    @keyframes moveCircleRight {
+        0% {
+            left: 0;
+            transform: translateX(0);
+        }
+
+        100% {
+            left: 100%;
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes moveCircleLeft {
+        0% {
+            left: 100%;
+            transform: translateX(-100%);
+        }
+
+        100% {
+            left: 0;
+            transform: translateX(0);
+        }
+    }
+</style>
+
+<body>
+    <div class="popup">
+        <h1> <span class="blue">Colourblind Accessibility Tool</span></h1>
+        <p>
+            Toggle the button to shift the colours and reduce light sensitivity.
+        </p>
+
+        <div class="button">
+            <div class="half" style="left: 10px;">On</div> <!-- Increased left spacing -->
+            <div class="half" style="right: 10px; text-align: right;">Off</div> <!-- Increased right spacing -->
+            <div class="circle"></div>
+        
+        </div>
+    </div>
+
+    <script src="./popup.js"></script>
+</body>
+
+</html>
